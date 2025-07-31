@@ -1,0 +1,77 @@
+/* 상세페이지 구간 전체 박스 */
+.detail-box {
+  width: 100%;
+  max-width: 1200px;
+  height: 800px;
+  display: flex;
+  background-color: #f9f9f9;
+  padding: 40px;
+  gap: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* 왼쪽 아이폰 목업 */
+.mockup {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iphone {
+  width: 300px;
+  height: 500px;
+  background-color: #ddd;
+  border-radius: 30px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #666;
+}
+
+/* 오른쪽 상세페이지 + 텍스트 */
+.detail-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-images {
+  display: flex;
+  gap: 20px;
+}
+
+.detail-img {
+  width: 100px;
+  height: 800px;
+  background-color: #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-weight: bold;
+}
+
+/* 하단 텍스트 */
+.detail-text {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.detail-text h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.detail-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.nav.prev { left: 10px; }
+.nav.next { right: 10px; }
