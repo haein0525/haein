@@ -25,16 +25,67 @@ a { text-decoration:none; color:inherit; }
 }
 
 
+/* 기본 메뉴 */
 .navbar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 60px;              /* 메뉴 높이 */
-  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
+/* 네비구역 */
+
+.logo {
+  font-weight: bold;
+  color: #007aff;
+  font-size: 1.2rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+/* 햄버거 아이콘 - 모바일용 */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
 
 /* 2) 내부 컨테이너 */
 .navbar .container {
@@ -369,6 +420,7 @@ li{
 
 
 /* 여기는 이미지 첨부하는 컨텐츠라인 */
+/* 썸네일 스타일 */
 .thumbnail {
   width: 100%;
   height: 100%;
@@ -382,84 +434,93 @@ li{
   transform: scale(1.03);
 }
 
-.modal {
+/* 이미지 모달 */
+.img-modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.85);
   justify-content: center;
   align-items: center;
 }
 
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
+.img-modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-.close {
+.img-close {
   position: absolute;
   top: 20px;
-  right: 40px;
-  color: white;
+  right: 30px;
   font-size: 36px;
+  color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
-
-
-
 /* 반응형 */
-@media (max-width:768px) {
-  .hero h1 { font-size:3rem; }
-  .grid-item { height:200px; }
-}
+@media (max-width: 768px) {
+  .img-modal-content {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
 
+  .img-close {
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+  }
+}
 
 /* 비디오 */
-.modal {
+.video-modal {
   display: none;
   position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
 }
 
-.modal-content {
-  position: relative;
-  margin: 5% auto;
+.video-modal-content {
   width: 1280px;
   max-width: 90vw;
   aspect-ratio: 16 / 9;
+  position: relative;
+  margin-top: 10vh; /* 모바일에서 너무 위에 붙는 문제 방지 */
 }
 
-.modal video {
+.video-modal video {
   width: 100%;
+  height: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
-.close {
+.video-close {
   position: absolute;
-  top: -20px;
+  top: -40px;
   right: 0;
   font-size: 2rem;
   color: white;
   cursor: pointer;
 }
 
-
-/* 모바일 전용 설정 */
 @media screen and (max-width: 768px) {
-  .modal-content {
-    margin: 20vh auto 0 auto; /* 화면 높이의 20% 아래에서 시작 */
+  .video-modal-content {
+    margin-top: 20vh;
   }
 }
+
 
 /* 풋터  */
 

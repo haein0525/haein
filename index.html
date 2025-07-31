@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio 2025 | Designer</title>
+  <link rel="stylesheet" href="./style.css">
+<script>
+  function openModal(src) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "flex";
+    modalImg.src = src;
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+  
+    // 비디오
+  function openVideoModal() {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("videoPlayer");
+    modal.style.display = "flex";
+    video.currentTime = 0;
+    video.play();
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("videoPlayer");
+    video.pause();
+    modal.style.display = "none";
+  }
+  
+      // 네비
+    function toggleMenu() {
+    const menu = document.querySelector(".nav-menu");
+    menu.classList.toggle("active");
+  }
+    // 컨텐츠
+    function openImageModal(src) {
+    const modal = document.getElementById("imgModal");
+    const modalImage = document.getElementById("modalImage");
+    modal.style.display = "flex";
+    modalImage.src = src;
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById("imgModal");
+    modal.style.display = "none";
+  }
+</script>
+
+
+
+</head>
+<body>
+
+    <!-- 1. 상단 고정 네비게이션 -->
+<nav class="navbar">
+  <div class="logo">HAEIN</div>
+  <ul class="nav-menu">
+    <li><a href="#profile">PROFILE</a></li>
+    <li><a href="#detail">DETAIL</a></li>
+    <li><a href="#sns">SNS</a></li>
+    <li><a href="#offline">OFFLINE</a></li>
+    <li><a href="#homepage">HOMEPAGE</a></li>
+    <li><a href="#video">VIDEO</a></li>
+  </ul>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+
+  <section class="port_img" id="port_img"">
+    <img src="./img/사원증.png" alt="" class="main-img">
+  </section>
+    <!-- 자기소개 -->
+  
+      <section class="id-card" id="id-card">
+        <h2 class="id-title">PROFILE</h2>
+          <div class="container">
+            <div class="id-left">
+            <img src="./img/면접 이미지 복사.jpg" alt="해인 사진" class="id-photo" />
+            <div class="id-info">
+              <p class="label">NAME <span class="value name">이 해 인</span></p>
+              <p class="label">1993.01.06</p>
+              <p class="label">PHONE <span class="value">010-7731-3510</span></p>
+              <p class="label">E-MAIL <span class="value">offhaein@gmail.com</span></p>
+            </div>
+          </div>
+
+          <div class="id-right">
+                <div class="section">
+                  <h3><i class="icon-edu"></i> EDUCATION</h3>
+                  <ul>
+                    <li>
+                      <div>2013.02</div>
+                      <div>영남이공대학교 화장품화공학부 졸업</div>
+                    </li>
+                    <li>
+                      <div>2016.07</div>
+                      <div>취업성공패키지 사무직양성과정 수료</div>
+                    </li>
+                    <li>
+                      <div>2019.07</div>
+                      <div>부산디자인센터 <span class="highlight">프론트엔드 웹디자인과정</span> 수료</div>
+                    </li>
+                    <li>
+                      <div>2024.08</div>
+                      <div>쉽게 배우는 영상 <span class="highlight">모션그래픽</span> 수료</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="section">
+                  <h3><i class="icon-work"></i> CAREER</h3>
+                  <ul>
+                    <li>
+                      <div>2016.12 - 2017.11</div>
+                      <div>(주) 삼일종합안전 <span class="highlight red">안전화</span> 쇼핑몰 CS 주임직</div>
+                    </li>
+                    <li>
+                      <div>2017.12 - 2018.12</div>
+                      <div>(주) 트림즈컴 <span class="highlight red">여성복</span> 쇼핑몰 CS 사원직</div>
+                    </li>
+                    <li>
+                      <div>2020.03 - 2022.01</div>
+                      <div>(주) 제이제이코스메틱 <span class="highlight red">화장품</span> 쇼핑몰 웹디자이너 대리직</div>
+                    </li>
+                    <li>
+                      <div>2022.07 - 2024.12</div>
+                      <div>(주) 에스에스컴퍼니 <span class="highlight red">여행사</span> 웹디자이너 매니저</div>
+                    </li>
+                  </ul>
+                </div>
+
+            <div class="section">
+              <h3><i class="icon-tool"></i> TOOL</h3>
+              <div class="tools">
+                <span class="tool ps">PHOTOSHOP</span>
+                <span class="tool ai">ILLUSTRATION</span>
+                <span class="tool">PREMIERE</span>
+                <span class="tool">AFTER EFFECTS</span>
+              </div>
+              
+              <div class="tools">
+                    <span class="tool">HTML</span>
+                    <span class="tool">CSS</span>
+                    <span class="tool">EXCEL</span>
+                  </div>
+                </div>
+          </div>
+          </div>    
+      </section>
+
+<section id="detail" class="section-work">
+  <h2>Detail page</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <img src="./port/LW.png" alt="롯데월드" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+    <div class="grid-item">
+      <img src="./port/water.png" alt="워터파크" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+    <div class="grid-item">
+      <img src="./port/citytour.png" alt="부산시티투어" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- 이미지 확대 모달 -->
+<div id="imgModal" class="img-modal">
+  <span class="img-close" onclick="closeImageModal()">&times;</span>
+  <img class="img-modal-content" id="modalImage">
+</div>
+
+
+<section id="sns" class="section-work">
+  <h2>SNS</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <img src="./port/yongdusan.png" alt="용두산공원" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+    <div class="grid-item">
+      <img src="./port/mawon.png" alt="마원" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+    <div class="grid-item">
+      <img src="./port/summer.png" alt="여름콘텐츠" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- ✅ 이미지 확대 모달 -->
+<div id="imgModal" class="img-modal">
+  <span class="img-close" onclick="closeImageModal()">&times;</span>
+  <img class="img-modal-content" id="modalImage">
+</div>
+
+
+
+<section id="offline" class="section-work">
+  <h2>OFFLINE</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <img src="./port/post.png" alt="포스터" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+    <div class="grid-item">
+      <img src="./port/x-banner.png" alt="X배너1" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+    <div class="grid-item">
+      <img src="./port/x-banner2.png" alt="X배너2" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- ✅ 이미지 확대 모달 (공통 사용) -->
+<div id="imgModal" class="img-modal">
+  <span class="img-close" onclick="closeImageModal()">&times;</span>
+  <img class="img-modal-content" id="modalImage">
+</div>
+
+<section id="Homepage" class="section-work">
+  <h2>HOMEPAGE</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <img src="./port/home2-1.png" alt="홈페이지 썸네일1" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+    <div class="grid-item">
+      <img src="./port/home-2.png" alt="홈페이지 썸네일2" class="thumbnail" onclick="openImageModal(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- ✅ 이미지 확대 모달 (공통 사용) -->
+<div id="imgModal" class="img-modal">
+  <span class="img-close" onclick="closeImageModal()">&times;</span>
+  <img class="img-modal-content" id="modalImage">
+</div>
+
+<section id="video" class="section-work">
+  <h2>VIDEO</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <img src="./img/tizen_img.jpg" alt="Project 1" class="thumbnail" onclick="openVideoModal()">
+    </div>
+  </div>
+</section>
+
+<!-- ✅ 비디오 모달 -->
+<div id="videoModal" class="video-modal">
+  <div class="video-modal-content">
+    <span class="video-close" onclick="closeVideoModal()">&times;</span>
+    <video id="videoPlayer" autoplay muted controls>
+      <source src="./tizen.mp4" type="video/mp4">
+      브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <img src="./img/me.png" alt="프로필 이미지" class="footer-img">
+    <div class="footer-info">
+      <p class="footer-name">NAME. 이해인</p>
+      <p class="footer-phone">HP. 010-7731-3510</p>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
